@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="chatstyle.css">
+    <title>Chat Room</title>
+</head>
+<body>
+<!--Container and Title-->
+<div class="container my-4">
+    <h1 class="my-4 text-center">Chatting</h1>
+    <!--Buttons for chat room-->
+    <div class="chat-rooms mb-3 text-center">
+        <div class="my-2">Choose a chat room:</div>
+        <btn class="btn" id="general">#general</btn>
+        <btn class="btn" id="music">#music</btn>
+        <btn class="btn" id="gaming">#gaming</btn>
+        <btn class="btn" id="travelling">#travelling</btn>
+    </div>
+    <!--Chat list / Window-->
+    <div class="chat-window">
+        <ul class="chat-list list-group"></ul>
+    </div>
+    <!--New chat form-->
+    <form class="new-chat my-3">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text">Your message:</div>
+            </div>
+            <input type="text" id="message" class="form-control" required>
+            <div class="input-group-append">
+                <input type="submit" class="btn" value="send">
+            </div>
+        </div>
+    </form>
+    <!--Update name form-->
+    <form class="new-name my-3">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text">Update name:</div>
+            </div>
+            <input type="text" id="name" class="form-control" required>
+            <div class="input-group-append">
+                <input type="submit" class="btn" value="update">
+            </div>
+        </div>
+        <div class="update-msg"></div>
+    </form>
+</div>
+<script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+<script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyBnP_KZPg824AkGkAuEfIIcEtALK7z92Ak",
+        authDomain: "my-ninja-cb01a.firebaseapp.com",
+        databaseURL: "https://my-ninja-cb01a.firebaseio.com",
+        projectId: "my-ninja-cb01a",
+        storageBucket: "my-ninja-cb01a.appspot.com",
+        messagingSenderId: "549714163961",
+        appId: "1:549714163961:web:e199e422dbd3f16e828a28",
+        measurementId: "G-9BG12H4E14"
+    };
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    const db = firebase.firestore();
+</script>
+<script src="scripts/uinew.js"></script>
+<script src="scripts/chatnew.js"></script>
+<script src="scripts/appnew.js"></script>
+</body>
+</html>
